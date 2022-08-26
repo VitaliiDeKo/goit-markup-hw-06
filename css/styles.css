@@ -15,7 +15,9 @@ ul{
   padding-left: 0;
   list-style: none;
 }
-button{
+button,
+textarea,
+input{
   cursor: pointer;
 }
 address{
@@ -31,6 +33,7 @@ body{
 .link{
 text-decoration: none
 }
+/*------------------Header---------------------*/
 /*Застилізував фон в Хедері*, верхній та нижній паддінги*/
 .page-header{
   background-color: #FFFFFF;
@@ -297,8 +300,7 @@ width: 696px;
 background-color: #FFFFFF;
 color: #2196F3;
 }
-
-
+/*------Оформлення бекдропу та модального вікна------*/
 .backdrop{
   position: fixed;
   top: 0;
@@ -324,6 +326,7 @@ color: #2196F3;
   
   transform: translate(-50%, -50%) scale(1) rotate(0);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 40px;
   }
 .is-hidden .modal{
   transform: translate(-50%, -50%) scale(0.5) rotate(360deg);
@@ -348,13 +351,181 @@ visibility: hidden;
 .modal-close-icon{
   position: absolute;
   fill: #000000;
-
+  
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.modal-close-icon:hover,
+.modal-close-icon:focus {
+  fill: #2196F3;
+}
+.modal-title{
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  color: #212121;
+  margin-bottom: 12px;
+}
+/*---------Оформлення форми в модальному вікні-------*/
+.form-input{
+  padding-left: 42px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  color: #757575;
+}
+.form-input::placeholder{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  color: #757575;
+}
+.form-input:focus{
+  outline-color: #2196F3;
+  }
+.form-input:focus + .input-icon{
+  fill: #2196F3;
+}
+.modal-text{
+font-weight: 400;
+font-size: 12px;
+line-height: 1.16;
+letter-spacing: 0.01em;
+color: rgba(117, 117, 117, 0.5);
+}
+.modal-text:focus{
+outline-color: #2196F3;
+}
+.check-text{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: #757575;
+  display: flex;
+  align-items: center;
+  }
+.check-text span{
+  width: 16px;
+  height: 15px;
+  border: 2px solid #212121;
+  border-radius: 3px;
+  display: flex;
+  margin-right: 7px;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71px;
+  letter-spacing: 0.03em;
+  color: #757575;
 
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.check-link{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  text-decoration-line: underline;
+  color: #2196F3;
+}
+.check-icon{
+  fill: transparent;
 
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.input-check:checked + .check-text span {
+  background-color: #2196F3;
+  border: none;
+}
+.input-check:focus + .check-text span {
+  border-color: #2196F3;
+}
+.input-check:checked + .check-text .check-icon{
+  fill: #FFFFFF;
+}
+.input-title{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  color: #757575;
+  margin-bottom: 4px;
+  display: block;
+}
+.modal-text{
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  color: rgba(117, 117, 117, 0.5);
+  display: block;
+}
+.modal-form .input-field:not(:last-child){
+  margin-bottom: 10px;
+}
+.input-wrap{
+  position: relative;
+}
+.input-icon{
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+}
+.input-field-hidd{
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 425px;
+}
+.batton-form{
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
+  display: block;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+  background: #2196F3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 10px 52px;
+  height: 50px;
+  width: 200px;
+
+  transition-property: color, background;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+.batton-form:hover,
+.batton-form:focus {
+  color: #2196F3;
+  background: #FFFFFF;
+}
+/*-----------------Advances-----------------*/
 .visually-hidden{
   position: absolute !important;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
@@ -421,6 +592,7 @@ visibility: hidden;
   .centered {
     text-align: center;
   }
+  /*-----------------About----------------*/
 .about-title{
   font-weight: 700;
   font-size: 36px;
@@ -466,6 +638,7 @@ visibility: hidden;
   left: 50%;
   transform: translate(-50%, -50%);
   }
+  /*---------------Team--------------*/
 .team{
   padding-top: 94px;
   padding-bottom: 94px;
@@ -559,6 +732,9 @@ transition-property: background-color, color, box-shadow, fill;
 transition-duration: 250ms;
 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/*---------------Button Portfolio---------------*/
+
 /*Застилізував блок з 5 кнопок в розділі Портфоліо,
 вирівняв текст в кнопках, зробив кнопки блочними елементами,
  */
@@ -611,6 +787,9 @@ justify-content: center;
   background-color: #F5F5F5;
   display: inline-block;
   }
+
+/*-------------------Projects-------------------*/
+
 .projects-top{
 position: relative;
 overflow: hidden;
@@ -757,15 +936,7 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 .client-link:focus .client-icon {
   fill: #2196F3;
 }
-/*header-link-mail:hover,
-.header-link-mail:focus {
-  color: #2196F3;
-}*/
-/*Визначив колір в ховері і в фокусі на посилання з номером телефону в хедері*/
-/*.header-link-phone:hover,
-.header-link-phone:focus {
-  color: #2196F3;
-}*/
+/*--------------------------Футер--------------------------*/
 /*Застилізував фон футера
 встановив верхній та нижній паддінги*/
 .footer{
@@ -775,6 +946,10 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   .footer-conteiner{
     display: flex;
+  }
+  .footer-logo-address{
+    width: 231px;
+    margin-right: 70px;
   }
   /*Прибрав властивість Italic в адресі Футера*/
 .footer-adress{
@@ -900,7 +1075,91 @@ padding-bottom: 9px;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-footer-join{
+.footer-join{
   margin-top: 12px;
   margin-left: 0;
+  margin-right: 93px;
 }
+/*----------------------Форма в футері---------------------*/
+.footer-post {
+  display: block;
+  margin-top: 12px;
+}
+.footer-form{
+  display: flex;
+}
+.footer-wrap {
+  position: relative;
+}
+.footer-btn{
+  width: 200px;
+  height: 50px;
+  background: #2196F3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 10px 28px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  align-items: center;
+  text-align: justify;
+  color: #FFFFFF;
+  letter-spacing: 0.06em;
+
+  transition-property: color, background;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+.footer-btn:hover,
+.footer-btn:focus {
+  background-color: #FFFFFF;
+  color: #2196F3;
+}
+.footer-btn:hover .fut-input-icon,
+.footer-btn:focus .fut-input-icon{
+  fill: #2196F3;
+}
+.fut-input-icon{
+position: absolute;
+top: 50%;
+right: 28px;
+transform: translateY(-40%);
+fill: #FFFFFF;
+}
+
+.footer-text-form{
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+.footer-input{
+  margin-right: 12px;
+  background: #2F303A;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  width: 358px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  color: #FFFFFF;
+  
+}
+.footer-input::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: 16px;
+ }
+
+
+
+
+
+
